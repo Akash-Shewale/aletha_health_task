@@ -14,6 +14,7 @@ class ExerciseBloc extends Bloc<ExerciseEvent, ExerciseState> {
     on<FetchExerciseEvent>((event, emit) async {
       exerciseList.clear();
       emit(LoadingState());
+      //this is bloc example
       try {
         final response = await repository.fetchExercise();
         final List<dynamic> body = json.decode(response.body);
